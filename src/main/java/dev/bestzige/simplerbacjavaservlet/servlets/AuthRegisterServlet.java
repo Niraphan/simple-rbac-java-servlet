@@ -52,11 +52,12 @@ public class AuthRegisterServlet extends HttpServlet {
         boolean success = authRepository.register(newUser, password);
         if (!success) {
             req.setAttribute("error", "Failed to register");
-        } else {
-            HttpSession session = req.getSession();
-            session.setAttribute("user", newUser);
+            doGet(req, resp);
+            return;
         }
 
+        HttpSession session = req.getSession();
+        session.setAttribute("user", newUser);
         resp.sendRedirect(getServletContext().getContextPath() + "/");
     }
 }

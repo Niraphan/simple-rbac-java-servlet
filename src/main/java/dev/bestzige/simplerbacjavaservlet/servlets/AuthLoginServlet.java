@@ -35,11 +35,12 @@ public class AuthLoginServlet extends HttpServlet {
 
         if (user == null) {
             req.setAttribute("error", "Invalid username or password");
-        } else {
-            HttpSession session = req.getSession();
-            session.setAttribute("user", user);
+            doGet(req, resp);
+            return;
         }
 
+        HttpSession session = req.getSession();
+        session.setAttribute("user", user);
         resp.sendRedirect(getServletContext().getContextPath() + "/");
     }
 }
