@@ -8,9 +8,9 @@
         <class>dev.bestzige.simplerbacjavaservlet.entities.User</class>
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3307/simple-rbac-java-servlet"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:330ุ/simple-rbac-java-servlet"/>
             <property name="jakarta.persistence.jdbc.user" value="root"/>
-            <property name="jakarta.persistence.jdbc.password" value=""/>
+            <property name="jakarta.persistence.jdbc.password" value="0969422653"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
         </properties>
     </persistence-unit>
