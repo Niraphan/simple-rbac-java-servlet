@@ -9,6 +9,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.util.List;
@@ -68,6 +69,12 @@ public class UserManagerServlet extends HttpServlet {
                     return;
                 }
                 userRepository.remove(user);
+
+                HttpSession session = req.getSession(false);
+                User userSession = (User) session.getAttribute("user");
+                if(userSession.getId() == user.getId()) {
+                    session.invalidate();
+                }
             }
         }
 
